@@ -1,4 +1,3 @@
-
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <iostream>
@@ -72,11 +71,11 @@ void saveProgress() {
 }
 
 void switchEquipment() {
-    // Implementação da troca de equipamentos
+    // Implementação da troca de equipamento
 }
 
 void switchEnvironment() {
-    // Implementação da troca de ambientes
+    // Implementação da troca de ambiente
 }
 
 void displayOptionsMenu(RenderWindow &window, Font &font) {
@@ -84,13 +83,13 @@ void displayOptionsMenu(RenderWindow &window, Font &font) {
 }
 
 void startGame(RenderWindow &window) {
+    // Carregar a fonte
     Font font;
     if (!font.loadFromFile("arial.ttf")) {
-        cout << "Erro ao carregar a fonte!" << endl;
+        cout << "Erro ao carregar a fonte" << endl;
         return;
     }
 
-    Clock clock;
     while (window.isOpen()) {
         Event event;
         while (window.pollEvent(event)) {
@@ -98,7 +97,7 @@ void startGame(RenderWindow &window) {
                 window.close();
 
             if (event.type == Event::KeyPressed) {
-                if (event.key.code == Keyboard::Space) {
+                if (event.key.code == Keyboard::F) {
                     isFishing = !isFishing;
                     if (isFishing) {
                         castSound.play();
